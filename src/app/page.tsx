@@ -1,6 +1,7 @@
 'use client'
 import { Application } from '@/component/Application';
 import Counter from '@/component/counter';
+import CounterTwo from '@/component/counter-two';
 import MUIMode from '@/component/mui-mode';
 import Skills from '@/component/skills';
 import UserComponent from '@/component/user-component';
@@ -53,6 +54,10 @@ export default function Home() {
 
         <h1>Material UI</h1>
         <MUIMode />
+
+
+        <h1>Mock Function</h1>
+        <CounterTwo />
       </div>
     </>
   )
