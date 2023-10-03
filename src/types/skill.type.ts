@@ -1,3 +1,3 @@
 export interface ISkills {
-    skills: string[];
+  skills: string[];
 }
