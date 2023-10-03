@@ -1,23 +1,16 @@
-import UserComponent from "@/component/user-component";
-import { render, screen} from "@testing-library/react";
+import { screen, render } from '@testing-library/react';
+import Users from "@/component/user";
 
-describe('This is testing of User Component', () => {
-    it('Email verified', () => {
-        render(<UserComponent name="Avinash" userName="AvkNash45" email="avinash.kokare@fitcircle.in" isEmailVarified={true} />);
-
-        expect(screen.getByText('Email Verified')).toBeInTheDocument();
+describe('User Testing', () => { 
+    it('Render User component correctly', () => { 
+        render(<Users />);
+        const userTest = screen.getByRole('heading');
+        expect(userTest).toHaveTextContent(/Users Data/);
     });
 
-    it('Email not verified', () => {
-        render(<UserComponent name="Avinash" userName="AvkNash45" email="avinash.kokare@fitcircle.in" isEmailVarified={false} />);
-
-        expect(screen.getByText('Email Not Verified')).toBeInTheDocument();
-    });
-
-    it('Should have display name end with three dots when length is greated than 30', () => {
-        render(<UserComponent name="Should have display name end with three dots when length is greated than 30" userName="AvkNash45" email="avinash.kokare@fitcircle.in" isEmailVarified={false} />);
-
-        const displayName = screen.getByText(/Name/);
-        expect(displayName).toHaveTextContent(/.*\.\.\./);
+    it('Test users data correctly', async () => {
+        render(<Users />);
+        const getUserList = await screen.findAllByRole('listitem');
+        expect(getUserList).toHaveLength(3);
     });
 });

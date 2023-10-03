@@ -4,6 +4,7 @@ import Counter from '@/component/counter';
 import CounterTwo from '@/component/counter-two';
 import MUIMode from '@/component/mui-mode';
 import Skills from '@/component/skills';
+import Users from '@/component/user';
 import UserComponent from '@/component/user-component';
 import UserList from '@/component/user-list';
 import React, { useCallback, useState } from 'react'
@@ -58,6 +59,9 @@ export default function Home() {
 
         <h1>Mock Function</h1>
         <CounterTwo />
+
+        <h1>Http API testing</h1>
+        <Users />
       </div>
     </>
   )
